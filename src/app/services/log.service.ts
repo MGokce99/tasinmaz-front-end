@@ -4,6 +4,7 @@ import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http
 import { AuthService } from './auth.service';
 import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -12,7 +13,7 @@ export class LogService {
   private selectedLogs: Log[] = [];
 
   constructor(private httpClient: HttpClient, private authService:AuthService) { }
-  path = "https://localhost:44390/api/";
+  path = environment.apiUrl;
 
   getAll(): Observable<Log[]>{
     return this.httpClient.get<Log[]>(this.path + "logs/getall");

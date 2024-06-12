@@ -9,12 +9,14 @@ import { JwtConfigService } from "./jwt-config.service";
 import { JwtHelperService } from "@auth0/angular-jwt";
 import { UserForLoginDto } from "../dtos/userForLoginDto";
 import { UserForRegisterDto } from "../dtos/userForRegisterDto";
+import { environment } from "src/environments/environment";
 
 @Injectable({
   providedIn: "root",
 })
 export class AuthService {
-  private apiUrl = "https://localhost:44390/api/auth";
+  path = environment.apiUrl;
+  private apiUrl = this.path + "auth";
   userToken: any;
   decodedToken: TokenInfo;
   jwtHelper: JwtHelperService = new JwtHelperService();

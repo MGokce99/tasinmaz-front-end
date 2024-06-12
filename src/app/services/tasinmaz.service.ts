@@ -14,6 +14,7 @@ import { User } from "../models/user";
 import { TasinmazComponent } from "../tasinmaz/tasinmaz.component";
 import { AuthService } from "./auth.service";
 import { IDataResult } from "../baseresponse/IDataResult";
+import { environment } from "src/environments/environment";
 
 @Injectable({
   providedIn: "root",
@@ -46,7 +47,7 @@ export class TasinmazService {
   getTasinmazComponent(): TasinmazComponent {
     return this.tasinmazComponent;
   }
-  path = "https://localhost:44390/api/";
+  path = environment.apiUrl;
 
   getAll(): Observable<IDataResult<Tasinmaz[]>> {
     return this.httpClient.get<IDataResult<Tasinmaz[]>>(this.path + "tasinmazlar/getall");

@@ -4,6 +4,7 @@ import { AuthService } from "./auth.service";
 import { Observable, throwError } from "rxjs";
 import { User } from "../models/user";
 import { catchError, tap } from "rxjs/operators";
+import { environment } from "src/environments/environment";
 
 @Injectable({
   providedIn: "root",
@@ -15,7 +16,7 @@ export class UserService {
     private httpClient: HttpClient,
     private authService: AuthService
   ) {}
-  path = "https://localhost:44390/api/";
+  path = environment.apiUrl;
 
   getAll(): Observable<User[]> {
     return this.httpClient.get<User[]>(this.path + "users/getall");
