@@ -1,0 +1,125 @@
+/* Arama alanı stilini özelleştirme */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60vh; /* Sayfanın tamamını kaplar */
+  width: 100%;
+}
+.row{
+  width: 50%;
+}
+.input-group-append{
+  color: #7278ad;
+}
+.custom-search {
+  background-color: #2b0e35;
+  border-radius: 10px;
+  padding: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  width: 100%; /* İstenilen genişlik */
+  max-width: 700px; /* Maksimum genişlik */
+}
+
+/* Tablo stilleri */
+.table {
+  align-items: center;
+  justify-content: center;
+  max-width: 1200px;
+  background-color: #f0f0f0;
+  border: 1px solid #ddd;
+  border-collapse: collapse;
+  border-radius: 5px;
+  width: 100%;
+}
+.table-responsive {
+  max-width: 100%; /* Tablo içeriğinin maksimum genişliği ayarlandı */
+  overflow-x: auto; /* Yatay kaydırma çubuğunun görünmesini sağlar */
+}
+/* Tablo başlık stilleri */
+.table thead {
+  background-color: #997fb8;
+  color: #fff;
+}
+
+/* Tablo başlık hücreleri */
+.table th {
+  padding: 12px;
+  text-align: center;
+  background-color: #2b0e35; /* Updated background color */
+  color: #fff;
+}
+
+/* Tablo veri hücreleri */
+.table td {
+  padding: 10px;
+  text-align: center;
+  border-top: 1px solid #ddd;
+}
+
+/* Zebra çizgili tablo (opsiyonel) */
+.table tbody tr:nth-child(even) {
+  background-color: #7278ad;
+}
+
+/* Hücre içeriği stilini özelleştirme (örnek olarak) */
+.table td {
+  color: #333;
+  background-color: #f0f0f0;
+}
+
+/* Seçili satır stilini özelleştirme (opsiyonel) */
+.table tbody tr.selected {
+  background-color: #ffffcc;
+}
+
+/* Düğme stilini özelleştirme */
+.action-button {
+  margin: 5px;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.action-button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.add-button {
+  background-color: #7278ad;
+  color: #fff;
+}
+
+.delete-button {
+  background-color: #d31500;
+  color: #fff;
+}
+
+.edit-button {
+  background-color: #3498db;
+  color: #fff;
+}
+
+.report-button {
+  background-color: #17b83f;
+  color: #fff;
+}
+
+.action-button:hover {
+  filter: brightness(1.2);
+}
+
+/* Taşınmaz bulunamadı mesajı stilini özelleştirme */
+.no-data-message {
+  text-align: center;
+  font-size: 18px;
+  margin-top: 20px;
+  padding: 10px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}

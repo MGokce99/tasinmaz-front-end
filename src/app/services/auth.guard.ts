@@ -1,0 +1,37 @@
+import { Injectable } from "@angular/core";
+import {
+  CanActivate,
+  ActivatedRouteSnapshot,
+  RouterStateSnapshot,
+  Router,
+} from "@angular/router";
+import { Observable } from "rxjs";
+import { AuthService } from "./auth.service";
+
+@Injectable({
+  providedIn: "root",
+})
+export class AuthGuard implements CanActivate {
+  constructor(private authService: AuthService, private router: Router) {}
+
+  canActivate(
+    route: ActivatedRouteSnapshot,
+    state: RouterStateSnapshot
+  ): boolean | Observable<boolean> {
+    const isUserLoggedIn = this.authService.loggedIn();
+
+    if (isUserLoggedIn) {
+      const isAccessTokenExpired = this.authService.isTokenExpired();
+      if (!isAccessTokenExpired) {
+        return true;
+      } else {
+        // Token süresi dolduğunda, kullanıcıyı oturumu kapat ve giriş sayfasına yönlendir
+        this.authService.logoutForGuard();
+        return false;
+      }
+    } else {
+      this.router.navigateByUrl("auth/login");
+      return false;
+    }
+  }
+}

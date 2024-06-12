@@ -1,0 +1,41 @@
+/* "X" çıkış düğmesi stilini özelleştirme */
+.iptal {
+  background-color: #671786;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  font-size: 15px;
+  line-height: 1;
+  display: flex;
+  align-items: center; /* Düğme içeriğini dikey hizala */
+  justify-content: center; /* Düğme içeriğini yatayda ortala */
+  cursor: pointer; /* Üzerine gelindiğinde imleci bir el işareti yap */
+  transition: background-color 0.3s ease; /* Arka plan rengi için yumuşak bir geçiş ekleyin */
+  position: relative; /* İçeriğin konumunu belirlemek için */
+}
+
+.iptal i {
+  position: absolute; /* İçeriği mutlak konumlandırma yapmak için */
+  top: 50%; /* Dikeyde %50 */
+  left: 50%; /* Yatayda %50 */
+  transform: translate(-50%, -50%); /* İçeriği yuvarlak düğmenin merkezine kaydırma */
+}
+.iptal:hover {
+  background-color: #995ea8;
+}
+
+/* "Hoş Geldiniz" metni stilini düzenleme */
+#welcome-text {
+  color: #000000; /* Hoşgeldiniz yazısının rengini ayarlayabilirsiniz */
+  font-weight: bold; /* Yazının kalınlığını artırabilirsiniz */
+  text-align: right; /* Metni sağa yaslayın */
+}
+
+#welcome-text-container {
+  background-color: #7278AD; /* Kutu arka plan rengi */
+  padding: 10px; /* Kutu içeriği ile kenarları arasındaki boşluk */
+  border-radius: 5px; /* Kutunun kenarlarının yuvarlaklığı */
+  display: inline-block; /* Kutunun içeriğe uygun boyutlanmasını sağlar */
+}
